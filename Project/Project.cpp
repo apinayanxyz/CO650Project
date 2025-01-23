@@ -2,10 +2,26 @@
 //
 
 #include <iostream>
-
+#include "Class.h"
+using namespace std;
 int main()
-{
-    std::cout << "Hello World!\n";
+{   
+    /*Class test1;
+    Class* test =&test1;
+    *(test->attack) = *(test->attack) + 1;
+    *(test->attack) = *(test->attack) + 1;
+    cout << *(test->attack) << endl;
+    cout << *(test->attack) << endl;
+    test->levelUp(1, test);
+    cout << *test->attack << endl;
+    test->levelUp(1, test);
+    cout << *test->attack << endl;*/
+    Class test1;
+    Class* test = &test1;
+    cout << test->attack << endl;
+    test->levelUp(10);
+    cout << test->attack << endl;
+    cout << "Hello World!\n";
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

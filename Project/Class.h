@@ -2,12 +2,17 @@
 class Class
 {
 private:
+	
+public:
 	int health;
 	int level;
-public:
-	int checkSuccessrate() {
-		return 0;
-	}
+	int attack;
+	int maxHealth;
+
+	Class();
+	int checkSuccessrate();
+	void levelUp(int levels);
+	void heal(int healpoints);
 		
 };
 
