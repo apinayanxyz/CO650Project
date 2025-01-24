@@ -3,7 +3,13 @@
 
 #include <iostream>
 #include "Class.h"
+#include "Party.h"
 using namespace std;
+
+//assigning a max party size using static members 
+//is used to modify how a certain person may want others to play the game
+int Party::maxPartySize = 10;
+
 int main()
 {   
     /*Class test1;
@@ -16,6 +22,8 @@ int main()
     cout << *test->attack << endl;
     test->levelUp(1, test);
     cout << *test->attack << endl;*/
+    Party party;
+    party.getMaxSize();
     Class test1;
     Class* test = &test1;
     cout << test->attack << endl;

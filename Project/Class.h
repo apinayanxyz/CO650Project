@@ -9,6 +9,7 @@ public:
 	int attack;
 	int maxHealth;
 
+	//Constructor
 	Class();
 	int checkSuccessrate();
 	void levelUp(int levels);

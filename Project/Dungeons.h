@@ -6,6 +6,9 @@ private:
 	int dungeonDifficulty;
 	int maxGoldReward;
 public:
+	//Constructor
+	Dungeons();
+
 	int dungeonClearChance(int partyChance);
 	bool adventureCleared(int partyChance,int healerStrength);
 	bool miningCleared(int partyChance, int minerStrength);
