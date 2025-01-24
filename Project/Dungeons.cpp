@@ -1,5 +1,5 @@
 #include "Dungeons.h"
-
+#include "Party.h"
 
 //using friendship to gain the values and methods of party class
 int Dungeons::reward(bool dungeonCleared,Party party)
