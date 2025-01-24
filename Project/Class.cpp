@@ -21,20 +21,9 @@ int Class::checkSuccessrate()
 
 void Class::levelUp(int levels)
 {
-	/*int tempLevel = *test->level;
-	cout << tempLevel << endl;
-	int tempAttack = *test->attack;
-	cout << tempAttack << endl;
-	int tempMaxHealth = *test->maxHealth;
-	cout << tempMaxHealth << endl;*/
-
 	level = levels + level;
 	attack = attack + (1 * levels);
 	maxHealth = maxHealth + (2 * levels);
-
-	//level = &tempLevel;
-	//attack = &tempAttack;
-	//maxHealth = &tempMaxHealth;
 }
 
 void Class::heal(int healpoints)
