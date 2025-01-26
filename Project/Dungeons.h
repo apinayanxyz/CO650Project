@@ -9,10 +9,12 @@ public:
 	//Constructor
 	Dungeons();
 
-	int dungeonClearChance(int partyChance);
-	bool adventureCleared(int partyChance,int healerStrength);
-	bool miningCleared(int partyChance, int minerStrength);
-	bool dungeonCrawlingCleared(int partyChance, int mageStrength);
+	int dungeonClearChance(int (*partyChance));
+	bool adventureAttempt(int (*partyChance));
+	bool miningAttempt(int (*partyChance));
+	bool dungeonCrawlingAttempt(int (*partyChance));
+
+	void levelUpDungeon();
 	int reward(bool dungeonCleared,Party party);
 };
 

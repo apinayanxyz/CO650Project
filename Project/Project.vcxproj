@@ -129,12 +129,18 @@
   <ItemGroup>
     <ClCompile Include="Class.cpp" />
     <ClCompile Include="Dungeons.cpp" />
+    <ClCompile Include="Healer.cpp" />
+    <ClCompile Include="Mage.cpp" />
+    <ClCompile Include="Miner.cpp" />
     <ClCompile Include="Party.cpp" />
     <ClCompile Include="Project.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Class.h" />
     <ClInclude Include="Dungeons.h" />
+    <ClInclude Include="Healer.h" />
+    <ClInclude Include="Mage.h" />
+    <ClInclude Include="Miner.h" />
     <ClInclude Include="Party.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

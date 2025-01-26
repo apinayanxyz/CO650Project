@@ -22,6 +22,7 @@ int main()
     cout << *test->attack << endl;
     test->levelUp(1, test);
     cout << *test->attack << endl;*/
+
     Party party;
     party.getMaxSize();
     Class test1;
@@ -30,6 +31,23 @@ int main()
     test->levelUp(10);
     cout << test->attack << endl;
     cout << "Hello World!\n";
+
+
+    //Class test2 = party.addMiner("test");
+    /*Class* test3 = &(party.party[0]);
+    cout << test3->attack << endl;
+    test3->levelUp(10);
+    cout << test3->attack << endl;
+    test3->levelUp(10);
+    cout << test3->attack << endl;
+    test3->heal(100);
+    test3->heal(100);
+    test3->levelUp(10);
+    cout << test3->attack << endl;
+    test3->levelUp(10);
+    cout << test3->attack << endl;
+    cout << "Hello World!\n";*/
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

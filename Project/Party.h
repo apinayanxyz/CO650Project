@@ -1,8 +1,20 @@
 #pragma once
+#include <iostream>
+#include "Class.h"
+#include "Miner.h"
+#include "Healer.h"
+#include "Mage.h"
+using namespace std;
 class Party
 {
 private:
-	int partyMembers;
+	Class* party;
+	typedef int (*functype)(int* a, int*);
+	Miner* minerList;
+	Healer* healerList;
+	Mage* mageList;
+
+	int partySize;
 	int healers;
 	int miners;
 	int mages;
@@ -14,6 +26,14 @@ public:
 
 	//Constructor
 	Party();
+
+	void printParty();
+	void addMiner(string name);
+	int getMinerNumber();
+	void addMage(string name);
+	int getMageNumber();
+	void addHealer(string name);
+	int getHealerNumber();
 
 	//"Getters"
 	int getHealerStrength();
@@ -30,4 +50,5 @@ public:
 	int giveGold(int amount);
 	int recieveGold();
 	int recieveGold(int amount);
+
 };
