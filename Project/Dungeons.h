@@ -5,14 +5,17 @@ class Dungeons
 private:
 	int dungeonDifficulty;
 	int maxGoldReward;
+	int (*chance)();
 public:
 	//Constructor
 	Dungeons();
 
-	int dungeonClearChance(int (*partyChance));
-	bool adventureAttempt(int (*partyChance));
-	bool miningAttempt(int (*partyChance));
-	bool dungeonCrawlingAttempt(int (*partyChance));
+	//Functional pointers used
+	int dungeonClearChance(int (*partyChance)());
+	void dungeonAttempt(int(*partyChance)(), int choice,Party party);
+	void adventureAttempt(int(*partyChance)(), int MageStrength);
+	bool miningAttempt(int (*partyChance)(),int miningStrength);
+	bool dungeonCrawlingAttempt(int (*partyChance)(),int healingStrength);
 
 	void levelUpDungeon();
 	int reward(bool dungeonCleared,Party party);

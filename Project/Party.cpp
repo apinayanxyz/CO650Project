@@ -94,6 +94,24 @@ int Party::getHealerStrength()
 	}
 	return strength;
 }
+int Party::getMinerStrength()
+{
+	int strength = 0;
+	for (size_t i = 0; i < miners; i++)
+	{
+		strength = strength + (minerList[i].getMiningPower());
+	}
+	return strength;
+}
+int Party::getMageStrength()
+{
+	int strength = 0;
+	for (size_t i = 0; i < healers; i++)
+	{
+		strength = strength + (healerList[i].getHealingPower() * (healerList[i].getManaAmount() / healerList[i].getMaxManaAmount()));
+	}
+	return strength;
+}
 int Party::getTotalPartyChance()
 {
 	int totalChance = 0;
