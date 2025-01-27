@@ -55,8 +55,6 @@ int main()
     int (Party::*chance)();
     int (Party::*number)();
     int (Party::*strength)();
-    cout << party.getTotalPartyChance() << endl;
-    cout << party.getHealerStrength() << endl;
     chance = &Party::getTotalPartyChance;
     number = &Party::getHealerNumber;
     strength = &Party::getHealerStrength;

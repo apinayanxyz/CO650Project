@@ -16,7 +16,7 @@ public:
 	//Constructor
 	Class();
 	Class(string name);
-	int checkSuccessrate();
+	virtual int checkSuccessrate();
 
 
 	//Polymorphism

@@ -115,7 +115,7 @@ int Party::getMageStrength()
 int Party::getTotalPartyChance()
 {
 	int totalChance = 0;
-	for (size_t i = 0; i < maxPartySize; i++)
+	for (size_t i = 0; i < partySize; i++)
 	{
 		Class* p;
 		p = (party[i]);
