@@ -30,20 +30,24 @@ int main()
     cout << test->attack << endl;
     test->levelUp(10);
     cout << test->attack << endl;*/
-    party.addHealer("test4");
     party.addMiner("test1");
     party.addMiner("test2");
     party.addMiner("test3");
+    party.addHealer("test4");
     party.addHealer("test5");
     party.addHealer("test6");
+    party.addMage("test7");
+    party.addMage("test8");
+    party.addMage("test9");
 
-    cout << "Hello World!\n";
-    cout << "Hello World!\n";
-    cout << "Hello World!\n";
-    cout << "Hello World!\n";
-    cout << "Hello World!\n";
     party.printParty();
-    //party.healParty(20);
+    party.levelParty(20);
+    party.printParty();
+    party.damageParty(50);
+    party.healParty(20);
+    party.damageParty(50);
+    party.restoreMana(100);
+    party.healParty(10);
     party.printParty();
     cout << "Hello World!\n";
 

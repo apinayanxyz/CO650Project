@@ -43,6 +43,9 @@ public:
 
 
 	void healParty(int healpoints);
+	void restoreMana(int mana);
+	void levelParty(int levels);
+	void damageParty(int damage);
 
 
 	//Friendship

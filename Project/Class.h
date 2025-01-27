@@ -16,14 +16,22 @@ public:
 	//Constructor
 	Class();
 	Class(string name);
-	virtual void print();
 	int checkSuccessrate();
-	void levelUp(int levels);
-	void heal(int healpoints);
+
+
+	//Polymorphism
+	//These functions have been made virtual to allow for child classes to have functions 
+	//that have the same name (and may do the same thing) while being different and doing different/extra tasks
+	virtual void print();
+	virtual void levelUp(int levels);
+	virtual void heal(int healpoints);
+
 	void damage(int damagepoints);
 		
+
+	//Overloading
+	//These functions are used incase no parameter is required or provided by the system
 	void levelUp();
-	void heal();
 	void damage();
 };
 

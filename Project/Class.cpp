@@ -26,7 +26,7 @@ Class::Class(string name)
 
  void Class:: print()
 {
-	cout << classType << " " << name << "- level:" << level << " attack:" << attack << " health:" << health << " out of " << maxHealth << " left" << endl;
+	cout << classType << " " << name << "- level:" << level << "|| attack:" << attack << "|| health:" << health << " out of " << maxHealth << " left" << endl;
 }
 int Class::checkSuccessrate()
 {
@@ -47,6 +47,24 @@ void Class::levelUp()
 	attack = attack + 1;
 	maxHealth = maxHealth + 2;
 	health = health + 2;
+}
+void Class::damage()
+{
+	int damagepoints = 10;
+	if (health > 0) {
+		if (damagepoints <= (health)) {
+			health = health - damagepoints;
+			cout << name << " was damaged for " << damagepoints << endl;
+		}
+		else {
+			cout << name << " was damaged for " << (health) << endl;
+			health = 0;
+		}
+	}
+
+	else {
+		cout << name << " is at 0 health" << endl;
+	}
 }
 void Class::heal(int healpoints)
 {
@@ -84,3 +102,5 @@ void Class::damage(int damagepoints)
 		cout << name << " is at 0 health" << endl;
 	}
 }
+
+
