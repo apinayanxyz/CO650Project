@@ -23,6 +23,11 @@ Class::Class(string name)
 	health = baseHealth;
 	return;
 }
+
+ void Class:: print()
+{
+	cout << classType << " " << name << "- level:" << level << " attack:" << attack << " health:" << health << " out of " << maxHealth << " left" << endl;
+}
 int Class::checkSuccessrate()
 {
 	int chance = 5 + (level / 10) + (2 * (attack / 3)) - (maxHealth - health);
@@ -57,7 +62,7 @@ void Class::heal(int healpoints)
 	}
 
 	else {
-		cout << name <<" didn't need to heal" << endl;
+		cout << classType << " " << name << " didn't need to heal" << endl;
 	}
 	
 }

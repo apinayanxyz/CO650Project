@@ -7,6 +7,7 @@ private:
 	
 public:
 	int health;
+	string classType;
 	string name;
 	int level;
 	int attack;
@@ -15,6 +16,7 @@ public:
 	//Constructor
 	Class();
 	Class(string name);
+	virtual void print();
 	int checkSuccessrate();
 	void levelUp(int levels);
 	void heal(int healpoints);

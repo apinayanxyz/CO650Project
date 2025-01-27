@@ -25,11 +25,26 @@ int main()
 
     Party party;
     party.getMaxSize();
-    Class test1;
+    /*Class test1;
     Class* test = &test1;
     cout << test->attack << endl;
     test->levelUp(10);
-    cout << test->attack << endl;
+    cout << test->attack << endl;*/
+    party.addHealer("test4");
+    party.addMiner("test1");
+    party.addMiner("test2");
+    party.addMiner("test3");
+    party.addHealer("test5");
+    party.addHealer("test6");
+
+    cout << "Hello World!\n";
+    cout << "Hello World!\n";
+    cout << "Hello World!\n";
+    cout << "Hello World!\n";
+    cout << "Hello World!\n";
+    party.printParty();
+    //party.healParty(20);
+    party.printParty();
     cout << "Hello World!\n";
 
 

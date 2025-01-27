@@ -8,8 +8,7 @@ using namespace std;
 class Party
 {
 private:
-	Class* party;
-	typedef int (*functype)(int* a, int*);
+	Class** party;
 	Miner* minerList;
 	Healer* healerList;
 	Mage* mageList;
@@ -41,6 +40,11 @@ public:
 	int getMageStrength();
 	int getTotalPartyChance();
 	int getMaxSize();
+
+
+	void healParty(int healpoints);
+
+
 	//Friendship
 	//Will allow the dungeons class to see how much gold a party has
 	friend class Dungeons;
