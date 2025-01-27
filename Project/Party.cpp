@@ -117,7 +117,10 @@ int Party::getTotalPartyChance()
 	int totalChance = 0;
 	for (size_t i = 0; i < maxPartySize; i++)
 	{
-		totalChance = totalChance + party[i]->checkSuccessrate();
+		Class* p;
+		p = (party[i]);
+		cout << "Test" << endl;
+		totalChance = totalChance + p->checkSuccessrate();
 	}
 	return totalChance;
 }

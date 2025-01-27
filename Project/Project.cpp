@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Class.h"
 #include "Party.h"
+#include "Dungeons.h"
 using namespace std;
 
 //assigning a max party size using static members 
@@ -49,6 +50,17 @@ int main()
     party.restoreMana(100);
     party.healParty(10);
     party.printParty();
+    Dungeons dungeon;
+
+    int (Party::*chance)();
+    int (Party::*number)();
+    int (Party::*strength)();
+    cout << party.getTotalPartyChance() << endl;
+    cout << party.getHealerStrength() << endl;
+    chance = &Party::getTotalPartyChance;
+    number = &Party::getHealerNumber;
+    strength = &Party::getHealerStrength;
+    dungeon.dungeonAttempt(chance,number,strength,3,party );
     cout << "Hello World!\n";
 
 
