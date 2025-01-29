@@ -24,5 +24,7 @@ public:
     int getManaAmount();
     int getMaxManaAmount();
     int getManaLevel();
+
+
 };
 

@@ -31,6 +31,7 @@ int main()
     cout << test->attack << endl;
     test->levelUp(10);
     cout << test->attack << endl;*/
+    party.addMiner("test");
     party.addMiner("test1");
     party.addMiner("test2");
     party.addMiner("test3");
@@ -58,8 +59,14 @@ int main()
     chance = &Party::getTotalPartyChance;
     number = &Party::getHealerNumber;
     strength = &Party::getHealerStrength;
-    dungeon.dungeonAttempt(chance,number,strength,3,party );
+    dungeon.dungeonAttempt(chance,number,strength,3,&party );
     cout << "Hello World!\n";
+    dungeon.dungeonAttempt(chance, number, strength, 1, &party);
+    dungeon.dungeonAttempt(chance, number, strength, 1, &party);
+    number = &Party::getMinerNumber;
+    strength = &Party::getMinerStrength;
+    dungeon.dungeonAttempt(chance, number, strength, 3, &party);
+    party.printParty();
 
 
     //Class test2 = party.addMiner("test");

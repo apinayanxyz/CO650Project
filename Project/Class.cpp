@@ -30,10 +30,7 @@ Class::Class(string name)
 }
 int Class::checkSuccessrate()
 {
-	cout << "Test2" << endl;
-	//int chance = (5 + ((level / 10) + (2 * (attack / 3)) + (maxHealth - health)))/10;
 	int chance = attack;
-	cout << chance << endl;
 	return chance;
 }
 

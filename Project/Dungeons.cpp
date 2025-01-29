@@ -23,12 +23,12 @@ bool Dungeons::dungeonClearChance(int chance)
 //Function pointers
 //The following classes used funciton pointers to grab the function that is being called
 //The value of the pointers change with the change in parameter values, meaning the funciton being used changes
-void Dungeons::dungeonAttempt(int(Party::*partyChance)(), int(Party::*partyNumber)(), int(Party::*partyStrength)(),int choice,Party party)
+void Dungeons::dungeonAttempt(int(Party::*partyChance)(), int(Party::*partyNumber)(), int(Party::*partyStrength)(),int choice,Party *party)
 {
 	bool success;
-	chance = (party.*partyChance)();
-	number = (party.*partyNumber)();
-	strength = (party.*partyStrength)();
+	chance = (*party.*partyChance)();
+	number = (*party.*partyNumber)();
+	strength = (*party.*partyStrength)();
 	if (choice == 1)
 	{
 		if (chance<=0)
@@ -36,8 +36,8 @@ void Dungeons::dungeonAttempt(int(Party::*partyChance)(), int(Party::*partyNumbe
 			cout << "You don't have enough healers" << endl;
 		}
 		else {
-			cout << "Attempting adventure" << endl;
-			success = adventureAttempt(chance, strength);
+			cout << "Dungeon Crawling adventure" << endl;
+			success = dungeonCrawlingAttempt(chance, strength);
 		}
 	}
 	else if(choice == 2) 
@@ -47,7 +47,7 @@ void Dungeons::dungeonAttempt(int(Party::*partyChance)(), int(Party::*partyNumbe
 			cout << "You don't have enough mages" << endl;
 		}
 		else {
-			cout << "Attempting adventure" << endl;
+			cout << "Overworld adventure" << endl;
 			success = adventureAttempt(chance, strength);
 		}
 	}
@@ -57,16 +57,21 @@ void Dungeons::dungeonAttempt(int(Party::*partyChance)(), int(Party::*partyNumbe
 			cout << "You don't have enough miners" << endl;
 		}
 		else {
-			cout << "Attempting adventure" << endl;
-			success = adventureAttempt(chance, strength);
+			cout << "Mining adventure" << endl;
+			success = miningAttempt(chance, strength);
 		}
 	}
-	cout << "Your party has recieved " << reward(success, party) << " gold" << endl;
-	party.gold = party.gold + reward(success, party);
+	cout << "Your party has recieved " << reward(success, *party) << " gold" << endl;
+	party->setGold(party->getGold() + reward(success, *party));
+	cout << party->gold << endl;
 	if (success)
 	{
 		levelUpDungeon();
-		
+		party->levelParty(dungeonDifficulty);
+	}
+	else {
+
+		party->levelParty(dungeonDifficulty/3);
 	}
 
 }

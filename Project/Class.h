@@ -5,13 +5,13 @@ class Class
 {
 private:
 	
-public:
 	int health;
 	string classType;
 	string name;
 	int level;
 	int attack;
 	int maxHealth;
+public:
 
 	//Constructor
 	Class();
@@ -33,5 +33,12 @@ public:
 	//These functions are used incase no parameter is required or provided by the system
 	void levelUp();
 	void damage();
+
+	//Friendship
+	//Will allow theses classes to acces the private attributes of the "class2 class
+	friend class Party;
+	friend class Mage;
+	friend class Miner;
+	friend class Healer;
 };
 

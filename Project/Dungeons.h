@@ -14,7 +14,7 @@ public:
 
 	//Functional pointers used
 	bool dungeonClearChance(int chance);
-	void dungeonAttempt(int(Party::*partyChance)(), int(Party::*partyNumber)(), int(Party::*partyStrength)(), int choice,Party party);
+	void dungeonAttempt(int(Party::*partyChance)(), int(Party::*partyNumber)(), int(Party::*partyStrength)(), int choice,Party *party);
 	bool adventureAttempt(int partyChance, int mageStrength);
 	bool miningAttempt(int partyChance,int miningStrength);
 	bool dungeonCrawlingAttempt(int partyChance,int healingStrength);

@@ -22,12 +22,28 @@ Party::Party()
 void Party::printParty()
 {
 	cout << "---" << endl;
+	printGold();
 	for (size_t i = 0; i < partySize; i++)
 	{	
 		Class* p;
 		p = (party[i]);
 		p->print();
 	}
+}
+
+void Party::setGold(int gold)
+{
+	this->gold = gold;
+}
+
+int Party::getGold()
+{
+	return gold;
+}
+
+void Party::printGold()
+{
+	cout << "Your party has " << gold << " gold" << endl;
 }
 
 
@@ -119,7 +135,6 @@ int Party::getTotalPartyChance()
 	{
 		Class* p;
 		p = (party[i]);
-		cout << "Test" << endl;
 		totalChance = totalChance + p->checkSuccessrate();
 	}
 	return totalChance;

@@ -27,6 +27,8 @@ public:
 	Party();
 
 	void printParty();
+	void setGold(int gold);
+	void printGold();
 	void addMiner(string name);
 	int getMinerNumber();
 	void addMage(string name);
@@ -40,6 +42,7 @@ public:
 	int getMageStrength();
 	int getTotalPartyChance();
 	int getMaxSize();
+	int getGold();
 
 
 	void healParty(int healpoints);
