@@ -35,7 +35,6 @@ void startGame() {
     openMenu();
 }
 
-        static int input;
 void openMenu() {
     cout << "Please choose an option" << endl;
     cout << "- - - - - - -" << endl;
@@ -47,10 +46,15 @@ void openMenu() {
     cout << "6. Give gold" << endl;
     cout << "7. Exit" << endl;
     cout << "- - - - - - -" << endl;
-    cin >> input;
+    static int input;
+    if (input == 0)
+    {
+        cout << "Test" << endl;
+    }
     try {
         int age = 15;
         
+    cin >> input;
         if (!cin.fail()) {
             cout << "Access granted - you are old enough.";
         }
