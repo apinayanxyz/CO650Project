@@ -25,6 +25,7 @@ bool Dungeons::dungeonClearChance(int chance)
 //The value of the pointers change with the change in parameter values, meaning the funciton being used changes
 void Dungeons::dungeonAttempt(int(Party::*partyChance)(), int(Party::*partyNumber)(), int(Party::*partyStrength)(),int choice,Party *party)
 {
+	cout << "---" << endl;
 	bool success;
 	chance = (*party.*partyChance)();
 	number = (*party.*partyNumber)();
@@ -63,7 +64,6 @@ void Dungeons::dungeonAttempt(int(Party::*partyChance)(), int(Party::*partyNumbe
 	}
 	cout << "Your party has recieved " << reward(success, *party) << " gold" << endl;
 	party->setGold(party->getGold() + reward(success, *party));
-	cout << party->gold << endl;
 	if (success)
 	{
 		levelUpDungeon();

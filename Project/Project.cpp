@@ -7,25 +7,69 @@
 #include "Dungeons.h"
 using namespace std;
 
+//Static member
 //assigning a max party size using static members 
 //is used to modify how a certain person may want others to play the game
-int Party::maxPartySize = 10;
 
+int Party::maxPartySize = 10;
+Party party;
+
+void startGame();
+void openMenu();
+void addPartyMemberMenu();
+
+void chooseAdventure();
+
+
+void startGame() {
+    cout << "Welcome to the game" << endl;
+    openMenu();
+}
+
+void openMenu() {
+    cout << "Please choose an option" << endl;
+    cout << "- - - - - - -" << endl;
+    cout << "1. Print party" << endl;
+    cout << "2. Add party member" << endl;
+    cout << "3. Attempt an adventure" << endl;
+    cout << "4. Heal Party(Costs Gold)" << endl;
+    cout << "5. Recover Mana" << endl;
+    cout << "6. Give gold" << endl;
+    cout << "7. Exit" << endl;
+    cout << "- - - - - - -" << endl;
+    try {
+        int age = 15;
+        int input;
+        cin >> input;
+        
+        if ((int)(input)==input) {
+            cout << "Access granted - you are old enough.";
+        }
+        else {
+            throw (input);
+        }
+    }
+    catch (int myNum) {
+        cout << "Access denied - You must be at least 18 years old.\n";
+        cout << "Age is: " << myNum;
+    }
+}
+
+void chooseAdventure() {
+    cout << "Which adevnture would you like to do" << endl;
+    int x;
+    cin >> x;
+    if (x>0)
+    {
+        cout << "Coreect" << endl;
+    }
+    else {
+        cout << x << endl;
+    }
+}
 int main()
 {   
-    /*Class test1;
-    Class* test =&test1;
-    *(test->attack) = *(test->attack) + 1;
-    *(test->attack) = *(test->attack) + 1;
-    cout << *(test->attack) << endl;
-    cout << *(test->attack) << endl;
-    test->levelUp(1, test);
-    cout << *test->attack << endl;
-    test->levelUp(1, test);
-    cout << *test->attack << endl;*/
-
-    Party party;
-    party.getMaxSize();
+    startGame();
     /*Class test1;
     Class* test = &test1;
     cout << test->attack << endl;
@@ -56,6 +100,7 @@ int main()
     int (Party::*chance)();
     int (Party::*number)();
     int (Party::*strength)();
+    int(Dungeons::*test)();
     chance = &Party::getTotalPartyChance;
     number = &Party::getHealerNumber;
     strength = &Party::getHealerStrength;

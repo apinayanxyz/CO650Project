@@ -145,13 +145,13 @@ int Party::getTotalPartyChance()
 
 int Party::getMaxSize()
 {
-	cout << maxPartySize << endl;
 	return maxPartySize;
 }
 
 void Party::healParty(int healpoints)
 {
 	cout << "---" << endl;
+	cout << "Healing party" << endl;
 	int manaCost = healpoints / 2;
 	int numberOfAvailableHeals = 0;
 	int damageAmount = 0;
@@ -188,14 +188,11 @@ void Party::healParty(int healpoints)
 					cout << healerList[i].name << " doesn't have enough mana to heal" << endl;
 				}
 			}
+
+			cout << "" << endl;
 			for (size_t i = 0; i < partySize; i++)
 			{
 				party[i]->heal(healpoints * (numberOfAvailableHeals / healers));
-			}
-			cout << "---" << endl;
-			for (size_t i = 0; i < healers; i++)
-			{
-				cout << healerList[i].name << " has used " << healerList[i].getManaAmount() << " mana" << endl;
 			}
 		}
 		else

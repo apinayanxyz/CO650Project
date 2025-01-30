@@ -26,7 +26,7 @@ Class::Class(string name)
 
  void Class:: print()
 {
-	cout << classType << " " << name << "- level:" << level << "|| attack:" << attack << "|| health:" << health << " out of " << maxHealth << " left" << endl;
+	cout << classType << " " << name << "- level:" << level << " || attack:" << attack << " || health:" << health << " out of " << maxHealth << " left" << endl;
 }
 int Class::checkSuccessrate()
 {
