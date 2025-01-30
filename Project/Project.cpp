@@ -21,11 +21,21 @@ void addPartyMemberMenu();
 void chooseAdventure();
 
 
+class MemoryException : public exception {
+public:
+    MemoryException() { }
+    virtual const char* what() const throw() {
+        return "You're party is at max size";
+    }
+};
+
+
 void startGame() {
     cout << "Welcome to the game" << endl;
     openMenu();
 }
 
+        static int input;
 void openMenu() {
     cout << "Please choose an option" << endl;
     cout << "- - - - - - -" << endl;
@@ -37,12 +47,11 @@ void openMenu() {
     cout << "6. Give gold" << endl;
     cout << "7. Exit" << endl;
     cout << "- - - - - - -" << endl;
+    cin >> input;
     try {
         int age = 15;
-        int input;
-        cin >> input;
         
-        if ((int)(input)==input) {
+        if (!cin.fail()) {
             cout << "Access granted - you are old enough.";
         }
         else {
@@ -50,9 +59,9 @@ void openMenu() {
         }
     }
     catch (int myNum) {
-        cout << "Access denied - You must be at least 18 years old.\n";
-        cout << "Age is: " << myNum;
+        cout << "You have not entered a number" << endl;
     }
+        openMenu();
 }
 
 void chooseAdventure() {
