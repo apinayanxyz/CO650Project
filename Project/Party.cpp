@@ -7,8 +7,6 @@
 using namespace std;
 Party::Party()
 {
-	//Pointers
-	//party is an array of pointers
 	party = new Class*[maxPartySize];
 	minerList = new Miner[maxPartySize];
 	healerList = new Healer[maxPartySize];
@@ -46,8 +44,6 @@ void Party::printGold()
 	cout << "Your party has " << gold << " gold" << endl;
 }
 
-
-
 void Party::addMiner(string name)
 {
 	if (partySize<maxPartySize)
@@ -59,6 +55,9 @@ void Party::addMiner(string name)
 		party[partySize] = &minerList[miners];
 		miners++;
 		partySize++;
+	}
+	else {
+		cout << "Your party is full" << endl;
 	}
 }
 int Party::getMinerNumber()
@@ -77,6 +76,9 @@ void Party::addMage(string name)
 		mages++;
 		partySize++;
 	}
+	else {
+		cout << "Your party is full" << endl;
+	}
 }
 int Party::getMageNumber()
 {
@@ -93,8 +95,9 @@ void Party::addHealer(string name)
 		party[partySize] = &healerList[healers];
 		healers++;
 		partySize++;
-		
-		
+	}
+	else {
+		cout << "Your party is full" << endl;
 	}
 }
 int Party::getHealerNumber()

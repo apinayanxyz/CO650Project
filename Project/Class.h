@@ -12,12 +12,14 @@ private:
 	int attack;
 	int maxHealth;
 public:
-
-	//Constructor
+    //Constructor
+    //Overloading
+    //Used to provide a defualt constructor for array use and a function that allows a name to be given to an object
 	Class();
 	Class(string name);
 	virtual int checkSuccessrate();
 
+	void damage(int damagepoints);
 
 	//Polymorphism
 	//These functions have been made virtual to allow for child classes to have functions 
@@ -25,14 +27,10 @@ public:
 	virtual void print();
 	virtual void levelUp(int levels);
 	virtual void heal(int healpoints);
-
-	void damage(int damagepoints);
-		
-
 	//Overloading
 	//These functions are used incase no parameter is required or provided by the system
-	void levelUp();
-	void damage();
+	virtual void levelUp();
+	virtual void damage();
 
 	//Friendship
 	//Will allow theses classes to acces the private attributes of the "class2 class
