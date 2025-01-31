@@ -49,6 +49,7 @@ public:
 	int getMageStrength();
 	int getTotalPartyChance();
 	int getMaxSize();
+	int getPartySize();
 	int getGold();
 
 
